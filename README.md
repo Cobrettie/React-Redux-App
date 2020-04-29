@@ -36,7 +36,7 @@ Follow these steps for completing your project.
 
 ## Needed Dependancies
 
-- [x] Redux, redux-thunk
+- [x] react-redux, Redux, redux-thunk
 
 ## Minimum Viable Product
 
