@@ -34,6 +34,10 @@ Follow these steps for completing your project.
 - [ ] Your team lead will count the project as complete by merging the branch back into master.
 - [ ] Do your magic!
 
+## Needed Dependancies
+
+- [x] Redux, redux-thunk
+
 ## Minimum Viable Product
 
 - [ ] Build a React Redux app
