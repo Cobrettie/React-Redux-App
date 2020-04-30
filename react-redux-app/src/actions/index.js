@@ -8,7 +8,7 @@ export const FETCH_DATA_FAIL = 'FETCH_DATA_FAIL';
 // http://numbersapi.com/42
 
 export const getData = () => {
-  const promise = axios.get('http://numbersapi.com/42')
+  const promise = axios.get('http://numbersapi.com/random')
 
   return dispatch => {
     dispatch({ type: FETCH_DATA_START })

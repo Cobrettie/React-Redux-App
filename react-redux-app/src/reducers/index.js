@@ -2,7 +2,7 @@ import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAIL } from '../action
 
 const initialState = {
   testArray: [],
-  isFetching: true,
+  isFetching: false,
   error: ''
 }
 

@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/index';
 
 class NumberData extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log('NumberData props', props)
+  }
+
   componentDidMount() {
     this.props.getData()
   }
@@ -12,7 +17,14 @@ class NumberData extends React.Component {
     return (
       <div>
         <h2>NumberData Component</h2>
-        {this.props.isFetching ? <h2>Loading...</h2> : this.props.testArray}
+        <button onClick={this.props.getData}>Get Random Number Fact</button>
+        <div>
+          {this.props.isFetching 
+            ? <h2>Loading...</h2> 
+            : this.props.testArray.map(item => {
+              return item.isFetching ? <h2>Loading...</h2> : <p key={item}>{item}</p>
+          })}
+        </div>
       </div>
     )
   }
@@ -21,7 +33,8 @@ class NumberData extends React.Component {
 const mapStateToProps = state => {
   console.log('NumberData mSTP', state)
   return {
-    testArray: state.testArray
+    testArray: state.testArray,
+    isFetching: state.isFetching
   }
 }
 
