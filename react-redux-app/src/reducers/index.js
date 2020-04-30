@@ -1,13 +1,31 @@
+import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAIL } from '../actions/index';
+
 const initialState = {
-  testArray: []
+  testArray: [],
+  isFetching: false,
+  error: ''
 }
 
 function reducer(state = initialState, action) {
-  console.log('reducer', state)
+  console.log('reducer', state, action)
   switch(action.type) {
-    case 'ADD_ITEM':
+    case FETCH_DATA_START:
       return {
-        testArray: [...state.testArray, action.payload]
+        ...state, 
+        isFetching: true
+      }
+
+    case FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        testArray: [...state.testArray, action.payload],
+        isFetching: false
+      }
+
+    case FETCH_DATA_FAIL:
+      return {
+        ...state,
+        error: action.payload
       }
 
     default:

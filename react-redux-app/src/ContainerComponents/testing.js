@@ -2,7 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+const API = 'http://numbersapi.com/number/random'
+
 function Test() {
+
+  axios
+    .get('http://numbersapi.com/random')
+    .then(response => {
+      console.log('Test get request', response)
+    })
+
   return (
     <div>
       <h2>testing.js component</h2>
