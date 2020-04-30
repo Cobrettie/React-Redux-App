@@ -16,7 +16,7 @@ class NumberData extends React.Component {
   render() {
     return (
       <div>
-        <h2>NumberData Component</h2>
+        <h2>Random Number Facts Using Numbers API</h2>
         <button onClick={this.props.getData}>Get Random Number Fact</button>
         <div>
           {this.props.isFetching 
