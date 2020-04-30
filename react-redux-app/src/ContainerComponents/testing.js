@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-const API = 'http://numbersapi.com/number/random'
+import { getData } from '../actions/index';
 
-function Test() {
+class Test extends React.Component {
+  componentDidMount() {
+    this.props.getData();
+  }
 
-  axios
-    .get('http://numbersapi.com/random')
-    .then(response => {
-      console.log('Test get request', response)
-    })
-
-  return (
-    <div>
-      <h2>testing.js component</h2>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <h2>testing.js component</h2>
+        <button onClick={this.props.getData}>Get Data</button>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {})(Test)
+export default connect(mapStateToProps, { getData })(Test)

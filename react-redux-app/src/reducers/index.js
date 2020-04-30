@@ -12,14 +12,16 @@ function reducer(state = initialState, action) {
     case FETCH_DATA_START:
       return {
         ...state, 
-        isFetching: true
+        isFetching: true,
+        error: ''
       }
 
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
         testArray: [...state.testArray, action.payload],
-        isFetching: false
+        isFetching: false,
+        error: ''
       }
 
     case FETCH_DATA_FAIL:
