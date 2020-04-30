@@ -27,10 +27,14 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-
+// 4/28/20
 // basic reducer created
 // store created
 // App wrapped in Provider
 // reducer passed into store
 // fetch data from API in async action creator
-// reference TK follow along
+
+// 4/29/20
+// data fetching successfully
+// build container (state) components
+// build presentational components

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { getData } from '../actions/index';
