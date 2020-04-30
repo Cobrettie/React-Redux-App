@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { getData } from '../actions/index';
 
@@ -11,6 +12,7 @@ class NumberData extends React.Component {
     return (
       <div>
         <h2>NumberData Component</h2>
+        {this.props.isFetching ? <h2>Loading...</h2> : this.props.testArray}
       </div>
     )
   }
@@ -19,7 +21,7 @@ class NumberData extends React.Component {
 const mapStateToProps = state => {
   console.log('NumberData mSTP', state)
   return {
-    state
+    testArray: state.testArray
   }
 }
 
