@@ -1,13 +1,12 @@
 import { FETCH_DATA_START, FETCH_DATA_SUCCESS, FETCH_DATA_FAIL } from '../actions/index';
 
 const initialState = {
-  testArray: [],
+  randomFacts: [],
   isFetching: false,
   error: ''
 }
 
 function reducer(state = initialState, action) {
-  console.log('reducer', state, action)
   switch(action.type) {
     case FETCH_DATA_START:
       return {
@@ -19,7 +18,7 @@ function reducer(state = initialState, action) {
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        testArray: [...state.testArray, action.payload],
+        randomFacts: [...state.randomFacts, action.payload],
         isFetching: false,
         error: ''
       }

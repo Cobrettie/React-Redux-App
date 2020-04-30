@@ -6,7 +6,6 @@ import { getData } from '../actions/index';
 class NumberData extends React.Component {
   constructor(props) {
     super(props)
-    console.log('NumberData props', props)
   }
 
   componentDidMount() {
@@ -16,12 +15,12 @@ class NumberData extends React.Component {
   render() {
     return (
       <div>
-        <h2>Random Number Facts Using Numbers API</h2>
-        <button onClick={this.props.getData}>Get Random Number Fact</button>
+        <h2>Random Number Facts!</h2>
+        <button onClick={this.props.getData}>Get Random Fact</button>
         <div>
           {this.props.isFetching 
             ? <h2>Loading...</h2> 
-            : this.props.testArray.map(item => {
+            : this.props.randomFacts.map(item => {
               return item.isFetching ? <h2>Loading...</h2> : <p key={item}>{item}</p>
           })}
         </div>
@@ -31,9 +30,8 @@ class NumberData extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('NumberData mSTP', state)
   return {
-    testArray: state.testArray,
+    randomFacts: state.randomFacts,
     isFetching: state.isFetching
   }
 }
